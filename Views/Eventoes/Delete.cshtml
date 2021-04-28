@@ -1,0 +1,51 @@
+﻿@model ProySalonDeEventos.Models.Evento
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar</h1>
+
+<h3>¿Está seguro que desea elimianr este registro?</h3>
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.musica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.musica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.decoracion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.decoracion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.catering)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.catering)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdEvento" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a asp-action="Index">Volver a la lista</a>
+    </form>
+</div>

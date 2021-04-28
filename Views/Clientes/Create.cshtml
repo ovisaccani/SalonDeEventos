@@ -1,0 +1,69 @@
+﻿@model ProySalonDeEventos.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="copete">
+    <h1>Crear Cliente</h1>
+
+    <h4>Cliente</h4>
+    <hr />
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="mail" class="control-label"></label>
+                <input asp-for="mail" class="form-control" />
+                <span asp-validation-for="mail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefono" class="control-label"></label>
+                <input asp-for="telefono" class="form-control" />
+                <span asp-validation-for="telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cuit" class="control-label"></label>
+                <input asp-for="cuit" class="form-control" />
+                <span asp-validation-for="cuit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="direccion" class="control-label"></label>
+                <input asp-for="direccion" class="form-control" />
+                <span asp-validation-for="direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="user" class="control-label"></label>
+                <input asp-for="user" class="form-control" />
+                <span asp-validation-for="user" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="pass" class="control-label"></label>
+                <input asp-for="pass" class="form-control" placeholder="******" aria-describedby="sizing-addon1" required />
+                <span asp-validation-for="pass" class="text-danger"></span>
+                <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-lock"></i></span>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Cliente" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="volver" >
+          <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

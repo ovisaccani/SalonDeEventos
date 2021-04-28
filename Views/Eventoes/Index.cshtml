@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProySalonDeEventos.Models.Evento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Eventos</h1>
+<hr>
+<br>
+
+<p>
+    <a asp-action="Create">Crear Nuevo Evento</a>
+</p>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.musica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.decoracion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.catering)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipo)
+
+
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.musica)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.decoracion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.catering)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tipo)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdEvento">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdEvento">Detalle</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdEvento">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

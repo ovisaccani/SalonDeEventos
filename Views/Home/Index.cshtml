@@ -1,0 +1,124 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!--<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>-->
+
+<div class="banner">
+    <div class="titulo">
+        <h1> Eventos Madero </h1>
+        <h2> ¡Celebrá con Nosotros! </h2>
+        <br><br>
+    </div>
+</div>
+
+
+
+
+
+<div class="intro" >
+    <h3> ¿Qué te trae por acá? </h3>
+    <h4> Decinos qué es lo que estás buscando y te contamos nuestra propuesta para</h4>
+    <h4>que tu fiesta sea 100% libre de estrés. </h4>
+</div>
+
+<!-- Contenido -->
+<div class="contenido">
+    <div class="boda">
+        <div class="boda_imagen">
+            <img src="imagenes/meCaso.jpg" alt="me caso" width="350">
+        </div>
+    </div>
+    <div class="Cumple de 15"></div>
+    <div>
+        <div class="cumple15_imagen">
+            <img src="imagenes/Cumple_15.jpg" alt="Cumple_15" width="310" height="194">
+        </div>
+    </div>
+    <div class="Empresa"></div>
+    <div>
+        <div class="Empresa_imagen">
+            <img src="imagenes/Empresa.jpg" alt="Empresa" width="303" height="194">
+        </div>
+    </div>
+    <div class="bar mitzvah"></div>
+    <div>
+        <div class="mi_bar_mitzvah_imagen">
+            <img src="imagenes/mi_bar_mitzvah.jpg" alt="mi_bar_mitzvah" width="300" height="194">
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+<!-- contacto -->
+<div class="Contacto">
+    <h3>¡Pedinos un presupuesto!</h3>
+    <h5> Envíenos su consulta y le responderemos a la brevedad</h5>
+    <br>
+
+    <form action="/my-handling-form-page" method="post">
+        <ul>
+            <li>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="user_name" placeholder="Nombre" required>
+            </li>
+            <li>
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="user_apellido" placeholder="Apellido" required>
+            </li>
+            <li>
+                <label for="mail">Correo electrónico:</label>
+                <input type="email" name="correo" placeholder="Correo" id="Correo" aria-describedby="sizing-addon1" required />
+            </li>
+            <li>
+                <label for="tel">Número de Teléfono:</label>
+                <input type="text" id="tel" name="user_tel" required>
+            </li>
+            <li>
+                <label for="Cantidad">Cantidad de invitados:</label>
+                <input type="text" id="Cantidad" name="user_cantidad" required>
+            </li>
+            <li>
+                <label for="tipo">Tipo de Evento:</label>
+                <input list="tipos" name="tipo" id="tipo" required>
+                <datalist id="tipos">
+                    <option value="Boda"/>
+                    <option value="Cumple de 15"/>
+                    <option value="Fiesta Empresaria"/>
+                    <option value="Bar mitzvah"/>
+                    <option value="Eventos Privados"/>
+                </datalist>
+            </li>
+            <li>
+                <label for="fecha">Fecha Ideal del evento:</label>
+                <input type="date" id="fecha" name="trip-start" value="01-01-1900" min="28-09-2020" max="31-12-2021">
+
+            </li>
+            <li>
+                <label for="msg">Comentarios:</label>
+                <textarea id="msg" name="user_message"></textarea>
+            </li>
+            <li class="button">
+                <button type="submit" onclick="submitform(); return false;">Envíe su mensaje</button>
+            </li>
+        </ul>
+    </form>
+    <script>
+        function submitform() {
+            alert("Solicitud de Presupuesto enviado con éxito");
+            document.getElementById('form').submit();
+        }
+    </script>
+</div>
+
+
+
+

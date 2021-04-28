@@ -1,0 +1,47 @@
+﻿@model ProySalonDeEventos.Models.Reserva
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar</h1>
+
+<h4>Reserva</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdReserva" />
+            <div class="form-group">
+                <label asp-for="cantInvitados" class="control-label"></label>
+                <input asp-for="cantInvitados" class="form-control" />
+                <span asp-validation-for="cantInvitados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fecha" class="control-label"></label>
+                <input asp-for="fecha" class="form-control" />
+                <span asp-validation-for="fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none">
+                <label asp-for="CurrentIdEvento" class="control-label"></label>
+                <select asp-for="CurrentIdEvento" class="form-control" asp-items="ViewBag.CurrentIdEvento"></select>
+            </div>
+            <div class="form-group" style="display:none">
+                <label asp-for="CurrentIdCliente" class="control-label"></label>
+                <select asp-for="CurrentIdCliente" class="form-control" asp-items="ViewBag.CurrentIdCliente"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

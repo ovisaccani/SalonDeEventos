@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProySalonDeEventos.Models.Presupuesto>
+
+@{
+    ViewData["Title"] = "Presupuesto";
+}
+
+<h1>Presupuesto</h1>
+
+<p>
+    <a asp-action="Create">Tu presupuesto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nombreCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cantInvitados)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comentario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombreCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cantInvitados)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefono)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPresupuesto">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdPresupuesto">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdPresupuesto">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+﻿@model ProySalonDeEventos.Models.Evento
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Resemen de evento</h1>
+
+<div>
+    <h4>Evento</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.musica)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.musica)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.decoracion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.decoracion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.catering)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.catering)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.tipo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.tipo)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdEvento">Editar</a> |
+    <a asp-action="Index">Volver a la lista</a>
+</div>

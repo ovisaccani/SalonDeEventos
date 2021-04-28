@@ -1,0 +1,56 @@
+﻿@model ProySalonDeEventos.Models.Evento
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear Evento</h1>
+
+<h4>Evento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nombre" class="control-label"></label>
+                <input asp-for="nombre" class="form-control" />
+                <span asp-validation-for="nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="musica" class="control-label"></label>
+                <input asp-for="musica" class="form-control" />
+                <span asp-validation-for="musica" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="decoracion" class="control-label"></label>
+                <input asp-for="decoracion" class="form-control" />
+                <span asp-validation-for="decoracion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="catering" class="control-label"></label>
+                <input asp-for="catering" class="form-control" />
+                <span asp-validation-for="catering" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tipo" class="control-label"></label>
+                <select asp-for="tipo" class="form-control" asp-items="Html.GetEnumSelectList<TipoEvento>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>
+                <span asp-validation-for="tipo" class="text-danger"></span>
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear Evento" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
